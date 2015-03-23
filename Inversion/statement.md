@@ -29,6 +29,7 @@ For each query, print the result in 1 line
 
 # Example
 ## Input
+```
 10
 2 6 6 4 7 6 3 5 9 1
 7
@@ -39,8 +40,10 @@ For each query, print the result in 1 line
 7 1
 10 10
 4 6
+```
 
 ## Output
+```
 17
 18
 16
@@ -48,3 +51,4 @@ For each query, print the result in 1 line
 14
 8
 6
+```
