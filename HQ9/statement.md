@@ -3,7 +3,7 @@
 `HQ9+` is a joke language (not even esoteric) which has only 4 instructions and is thus capable of only 4 actions:
 
 - `H` prints “Hello, World!” (the exact syntax of the printed sentence varies across implementations)
-- `Q` prints the text of the source code (thus, single-command code “Q” is a quine)
+- `Q` prints the text of the source code (thus, single-command code “Q” is a [quine](http://en.wikipedia.org/wiki/Quine_(computing)))
 - `9` prints the lyrics of “99 Bottles of Beer” (the exact text varies across different implementations as well)
 - `+` increments the accumulator (which you can’t access anyways)
 
