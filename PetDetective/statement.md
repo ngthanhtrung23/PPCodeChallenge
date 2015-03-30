@@ -23,7 +23,7 @@ So the shortest route has length = 5.
 
 ## Example 2:
 
-[!Example 2](./IMG_1589.PNG)
+![Example 2](./IMG_1589.PNG)
 
 M = 4, N = 3.
 - You start at cell (3, 1), and need to:
