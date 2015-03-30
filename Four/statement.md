@@ -1,8 +1,8 @@
 # Problem
 
-Given an array A with N elements (N <= 1000). The i-th element is denoted by A_i (1 <= A_i <= 1000).
+Given an array A with N elements. The i-th element is denoted by A_i.
 
-Find the number of ways to select 4 elements, such that the sum of the 4 selected elements is K. You can select each element multiple times.
+Find the number of ways to select 4 elements, such that the sum of the 4 selected elements is K. You can select each element more than once.
 
 For example:
 
@@ -27,6 +27,10 @@ For K = 6, you have 10 different ways:
 - 2, 1, 2, 1
 - 2, 2, 1, 1
 - 3, 1, 1, 1
+
+# Constraints:
+- 1 <= N <= 1000.
+- 1 <= A_i <= 1000.
 
 # Input:
 

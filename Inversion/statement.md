@@ -1,8 +1,8 @@
 # Problem
 
-Given an array A with N elements (N <= 250,000). Let's denote the i-th element by A(i) 1 <= A(i) <= 50,000.
+Given an array A with N elements. Let's denote the i-th element by A(i).
 
-You are asked to process Q queries on the array. For the i-th query, you need to change the value of some element and count the number of inversion of the array.
+You are asked to process Q queries on the array. For the i-th query, you need to change the value of some element and count the number of inversion of the array (after the change).
 
 An inversion of the array is a pair of indices (i, j) that satisfies the following 2 conditions:
 - i < j
@@ -17,6 +17,10 @@ A = [4, 3, 3, 4]
 We have 2 inversions:
 - 1, 2
 - 1, 3
+
+# Constraints
+- 1 <= N <= 250,000.
+- 1 <= A(i) <= 50,000.
 
 # Input
 - First line: the integer N
