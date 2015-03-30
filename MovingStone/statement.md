@@ -55,34 +55,39 @@ For each test:
 
 ## Explanation:
 - In the first test, there are 102 stones in total. So after all moves, there must be 34 stones (102 / 3 = 34) in each box.
+
 ```
 +---+---+---+
 | 0 | 99| 3 |
 +---+---+---+
 ```
   - In the first 31 moves, takes 2 stones from the middle box, and put them in the 2 neighbours:
-  ```
-  +---+---+---+
-  | 31| 37| 34|
-  +---+---+---+
-  ```
+
+```
++---+---+---+
+| 31| 37| 34|
++---+---+---+
+```
+
   - In the next 3 moves, takes 1 stone from the middle box and put it into the left box:
-  ```
-  +---+---+---+
-  | 34| 34| 34|
-  +---+---+---+
-  ```
+
+```
++---+---+---+
+| 34| 34| 34|
++---+---+---+
+```
   - So we need 34 moves in total.
 - In the second test, since there are in total 101 stones, we cannot make the 2 boxes having same amount of stone.
 - In the third test, initially, we have:
+
 ```
 +---+---+---+
 | 3 | 0 | 3 |
 +---+---+---+
 ```
   - In 1 move, we can move the stone from left box to middle box, and from right box to middle box. After that, we have 2 stone in each box:
-  ```
-  +---+---+---+
-  | 2 | 2 | 2 |
-  +---+---+---+
-  ```
+```
++---+---+---+
+| 2 | 2 | 2 |
++---+---+---+
+```
