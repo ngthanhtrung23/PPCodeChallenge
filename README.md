@@ -7,7 +7,7 @@ PayPal Code challenge
 3. Four (Smart brute force)
 4. Moving Stone (Greedy)
 5. Pet Detective (BFS/Dijkstra)
-6. Jumping Around (math, probability, Gaussian elimination)
+6. Jumping Around (math, probability, dynamic programming)
 7. Inversion (2D Fenwick tree / divide & conquer + Fenwick tree)
 
 ## Backup problem:
