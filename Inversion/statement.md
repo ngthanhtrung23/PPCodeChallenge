@@ -15,6 +15,7 @@ A = [4, 3, 3, 4]
 ```
 
 We have 2 inversions:
+
 - 1, 2
 - 1, 3
 

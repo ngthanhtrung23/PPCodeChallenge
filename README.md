@@ -6,9 +6,9 @@ PayPal Code challenge
 2. Black White (basic implementation skill)
 3. Four (Smart brute force)
 4. Moving Stone (Greedy)
-5. Inversion (Segment Tree)
-6. Pet Detective (BFS/Dijkstra)
-7. Jumping Around (math, probability, Gaussian elimination)
+5. Pet Detective (BFS/Dijkstra)
+6. Jumping Around (math, probability, Gaussian elimination)
+7. Inversion (2D Fenwick tree / divide & conquer + Fenwick tree)
 
 ## Backup problem:
 1. Magic square
