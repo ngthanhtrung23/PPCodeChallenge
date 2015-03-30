@@ -1,6 +1,6 @@
 # Statement
 
-HQ9+ is a joke language (not even esoteric) which has only 4 instructions and is thus capable of only 4 actions:
+`HQ9+` is a joke language (not even esoteric) which has only 4 instructions and is thus capable of only 4 actions:
 - `H` prints “Hello, World!” (the exact syntax of the printed sentence varies across implementations)
 - `Q` prints the text of the source code (thus, single-command code “Q” is a quine)
 - `9` prints the lyrics of “99 Bottles of Beer” (the exact text varies across different implementations as well)
@@ -11,20 +11,22 @@ The language was created around 2001 by Cliff L. Biffle. The language is one of 
 In this problem, you are asked to write an interpreter for the language.
 
 # Input
-The program in HQ9+. The program contains at most 100 characters. The characters other than `H`, `Q`, `9`, `+` are ignored.
+The input has a single line: a program in `HQ9+`. The program contains at most 100 characters. The characters other than `H`, `Q`, `9`, `+` are ignored.
 
 # Output
-The output of the HQ9+ program.
+The output of the HQ9+ program. After `H`, `Q` and `9` commands, print a new line.
 
 # Example
 ## Input
 ```
-H+HABC
+H+HABCQQ
 ```
 ## Output
 ```
 Hello, World!
 Hello, World!
+H+HABCQQ
+H+HABCQQ
 ```
 
 # Note
