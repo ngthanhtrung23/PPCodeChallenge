@@ -11,6 +11,7 @@ In each move, you can do the following:
   - Do nothing with this box
   - Take one stone from this box and put that stone in one of its neighbouring box.
   - If this box has 2 neighbours, you can take 2 stones in this box, put one in each of the neighbouring box (you cannot put 2 stones in the same neighbouring box).
+- The actions in one move must be applied at the same time, i.e. You can not move a stone from box 1 to box 2, and then move that same stone from box 2 to box 3.
 
 Find the minimum number of moves.
 
