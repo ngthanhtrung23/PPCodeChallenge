@@ -24,6 +24,8 @@ For each test:
 - 1st line: N - number of boxes
 - 2nd line: N integers - A(i).
 
+There is a blank line between two consecutive test cases.
+
 The last line of the input file contains the only integer -1.
 
 # Output
