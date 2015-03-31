@@ -36,7 +36,7 @@ The shortest route is:
 - Go from (4, 1) to (4, 2), pick up cat --> length = 1
 - Go from (4, 2) to (4, 3), pick up hedgehog --> length = 1
 - Go from (4, 3) to (3, 3), pick up turtle --> length = 1
-- Go from (3, 3) to (1, 3), return turtle --> length = 2
+- Go from (3, 3) to (1, 3), return dog --> length = 2
 - Go from (1, 3) to (1, 2), return cat --> length = 1
 - Go from (1, 2) to (1, 1), return hedgehog --> length = 1
 - Go from (1, 1) to (2, 1), return turtle --> length = 1
