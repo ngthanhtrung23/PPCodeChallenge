@@ -22,19 +22,19 @@ After T minutes, what is the expected number of unoccupied cells?
 - 1st line: N and T
 
 # Output:
-- 1st line: result, rounded to 6 decimal places.
+- 1st line: result, rounded to *exactly* 6 decimal places. Note that if you output less than 6 decimal places or more than 6 decimal places, your output will be judged as wrong.
 
 # Example:
 ## Input
 2 0
 
 ## Output
-0.0
+0.000000
 
 ## Input
 2 1
 ## Output
-1.0
+1.000000
 
 # Explanation
 - In first test case, after 0 second, all the cats are still in their initial positions. So the expected value is 0.0.
