@@ -50,15 +50,6 @@ bool operator < (const State& a, const State& b) {
     return false;
 }
 
-map<State,State> traceState;
-map<State,int> traceMove;
-
-void trace(State cur) {
-    if (cur.mask == 0) return ;
-    trace(traceState[cur]);
-    cout << traceMove[cur] << endl;
-}
-
 int main() {
     p3[0] = 1; FOR(i,1,20) p3[i] = p3[i-1] * 3;
     while (cin >> m >> n) {
@@ -75,7 +66,7 @@ int main() {
         FOR(i,1,m) FOR(j,1,n-1) cin >> ngang[i][j];
         FOR(i,1,m-1) FOR(j,1,n) cin >> doc[i][j];
 
-        cerr << "DONE INPUT" << endl;
+//        cerr << "DONE INPUT" << endl;
 
         FOR(i,1,100) FOR(j,1,100) d[i][j] = (i == j) ? 0 : 1000111000;
         FOR(i,1,m) FOR(j,1,n) {
@@ -91,7 +82,7 @@ int main() {
 //            cout << endl;
 //        }
 
-        cerr << "DONE FLOYD" << endl;
+//        cerr << "DONE FLOYD" << endl;
 
         map<State, int> dist;
         set< pair<int, State> > all;
@@ -103,8 +94,9 @@ int main() {
             all.erase(all.begin());
 
             if (cur.mask == p3[bound]-1) {
-                DEBUG(l);
-                trace(cur);
+                cout << l << endl;
+//                DEBUG(l);
+//                trace(cur);
                 break;
             }
 
@@ -119,8 +111,6 @@ int main() {
                     if (!dist.count(next) || dist[next] > l2) {
                         dist[next] = l2;
                         all.insert(make_pair(l2, next));
-                        traceState[next] = cur;
-                        traceMove[next] = i;
                     }
                 }
                 else if (t == 1) {
@@ -130,8 +120,6 @@ int main() {
                     if (!dist.count(next) || dist[next] > l2) {
                         dist[next] = l2;
                         all.insert(make_pair(l2, next));
-                        traceState[next] = cur;
-                        traceMove[next] = -i;
                     }
                 }
             }
