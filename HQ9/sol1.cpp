@@ -1,6 +1,7 @@
 // Writen by Nguyen Thanh Trung
 
-#include <bits/stdc++.h>
+#include <cstdio>
+#include <iostream>
 using namespace std;
 
 char tmp[1011];
