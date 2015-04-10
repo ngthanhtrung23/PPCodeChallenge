@@ -89,6 +89,7 @@ For each test:
 +---+---+---+
 ```
   - In 1 move, we can move the stone from left box to middle box, and from right box to middle box. After that, we have 2 stone in each box:
+
 ```
 +---+---+---+
 | 2 | 2 | 2 |

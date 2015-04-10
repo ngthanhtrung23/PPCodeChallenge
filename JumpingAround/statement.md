@@ -26,20 +26,30 @@ After T minutes, what is the expected number of unoccupied cells?
 
 # Example:
 ## Input
+```
 2 0
+```
 
 ## Output
+```
 0.000000
+```
 
 ## Input
+```
 2 1
+```
+
 ## Output
+```
 1.000000
+```
 
 # Explanation
 - In first test case, after 0 second, all the cats are still in their initial positions. So the expected value is 0.0.
 - In the second test case, after 1 second, each cat can jump to one of the 2 neighbouring cells (note that they can not stay at the same cell). Below are some of the possible state of the grid after 1 minute:
-  - Cat in (1, 1) jump to (1, 2). Cat in (1, 2) --> (1, 1). Cat in (2, 1) --> (2, 2) and cat in (2, 2) --> (2, 1):
+  - Cat in `(1, 1)` jump to `(1, 2)`. Cat in `(1, 2)` --> `(1, 1)`. Cat in `(2, 1)` --> `(2, 2)` and cat in `(2, 2)` --> `(2, 1)`:
+
 ```
 +---+---+
 | C | C |
@@ -47,7 +57,9 @@ After T minutes, what is the expected number of unoccupied cells?
 | C | C |
 +---+---+
 ```
-  - The cat in cell (1, 2) and (2, 1) jumped to cell (1, 1). Cat in (1, 1) and (2, 2) jumped to (1, 2):
+
+  - The cat in cell `(1, 2)` and `(2, 1)` jumped to cell `(1, 1)`. Cat in `(1, 1)` and `(2, 2)` jumped to `(1, 2)`:
+
 ```
 +---+---+
 |CC |CC |
@@ -55,4 +67,5 @@ After T minutes, what is the expected number of unoccupied cells?
 |   |   |
 +---+---+
 ```
+
   - There are 16 scenario in total, by counting the unoccupied cells and divide the result by 16, we get the answer 1.0.

@@ -5,6 +5,7 @@ Given an array A with N elements. Let's denote the i-th element by A(i).
 You are asked to process Q queries on the array. For the i-th query, you need to change the value of some element and count the number of inversion of the array (after the change).
 
 An inversion of the array is a pair of indices (i, j) that satisfies the following 2 conditions:
+
 - i < j
 - A(i) > A(j)
 
@@ -34,6 +35,7 @@ For each query, print the result in 1 line
 
 # Example
 ## Input
+
 ```
 10
 2 6 6 4 7 6 3 5 9 1
@@ -48,6 +50,7 @@ For each query, print the result in 1 line
 ```
 
 ## Output
+
 ```
 17
 18

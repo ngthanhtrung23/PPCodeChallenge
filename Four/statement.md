@@ -11,12 +11,14 @@ A = [1, 2, 3, 4, 5, 6]
 ```
 
 For K = 5, you have 4 different ways:
+
 - Select 1, 1, 1, 2
 - Select 1, 1, 2, 1
 - Select 1, 2, 1, 1
 - Select 2, 1, 1, 1
 
 For K = 6, you have 10 different ways:
+
 - 1, 1, 1, 3
 - 1, 1, 2, 2
 - 1, 1, 3, 1
@@ -29,6 +31,7 @@ For K = 6, you have 10 different ways:
 - 3, 1, 1, 1
 
 # Constraints:
+
 - 1 <= N <= 1000.
 - 1 <= A_i <= 1000.
 
@@ -38,6 +41,7 @@ For K = 6, you have 10 different ways:
 - The second line contains N integers, representing the array A.
 
 # Output:
+
 - Contains 4*N integers, the i-th integer is the result for K = i.
 
 # Example:
