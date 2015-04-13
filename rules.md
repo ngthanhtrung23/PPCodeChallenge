@@ -18,3 +18,8 @@
 - The contestants are forbidden to talk about subjects, related to the problems, with anybody, including other contestants. It is only allowed to ask questions to the organizers via the system.
 - The organizers of the contests have the right to monitor the contestants' honesty in behavior using different methods and disqualify the contestant if violations are found.
 - All programs submitted by the contestants for judging, should be aimed at solving the problem and not at violating rules or destabilizing the judging system. A contestant who deliberately attempts to destabilize the judging system, will be disqualified.
+
+# Responsibilities of organizers
+
+- Organizers will answer questions to clarify doubts on problem statement as soon as possible.
+- In case there is some issue with problem statement or prepared test cases, organizers will fix the errors as soon as possible, and will make announcement to all participants. Extra time may be added if necessary. In case the problem can not be fixed, it will be removed.
