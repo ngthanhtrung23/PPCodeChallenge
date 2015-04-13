@@ -55,3 +55,7 @@ Your solution is compiled and run automatically. Assume your program is saved wi
 int x_int = (int) (x * 100 + 1e-6); // add 1e-6 to avoid precision error when converting to int
 System.out.printf("%d.%02d\n", x_int / 100, x_int % 100);
 ```
+
+# Notes for Python participants:
+
+- Lists might be too slow / memory consuming for our problems. Please consider using [array](https://docs.python.org/2/library/array.html) if possible.
