@@ -24,6 +24,34 @@
 - Organizers will answer questions to clarify doubts on problem statement as soon as possible.
 - In case there is some issue with problem statement or prepared test cases, organizers will fix the errors as soon as possible, and will make announcement to all participants. Extra time may be added if necessary. In case the problem can not be fixed, it will be removed.
 
+# How your solution is compiled & run
+
+Your solution is compiled and run automatically. Assume your program is saved with name "problem.xx" (where xx can be py, c, cpp or java, depending on the language). The command used for compilation are:
+
+- C:
+```
+/usr/bin/gcc -DEVAL -static -O2 -o problem problem.c -lm
+```
+- C++:
+```
+/usr/bin/g++ -DEVAL -static -O2 -o problem problem.cpp
+```
+- Java:
+```
+/usr/bin/gcj --main=problem -O3 -o problem problem.java
+```
+- Python:
+```
+/usr/bin/python2 -m py_compile problem.py
+/bin/mv problem.pyc problem
+```
+
 # Notes for Java participants:
 
 - Scanner and PrintWriter are very slow. If the problem has large input/output, please use BufferedReader and BufferedWriter
+- The compiler used for Java, gcj, is known to have some problem in our system when printing floating number. For printing floating number, please convert to integer first, for example, to print variable `x` with 2 digits after decimal point:
+
+```java
+int x_int = (int) (x * 100 + 1e-6); // add 1e-6 to avoid precision error when converting to int
+System.out.printf("%d.%02d\n", x_int / 100, x_int % 100);
+```
