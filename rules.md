@@ -23,3 +23,7 @@
 
 - Organizers will answer questions to clarify doubts on problem statement as soon as possible.
 - In case there is some issue with problem statement or prepared test cases, organizers will fix the errors as soon as possible, and will make announcement to all participants. Extra time may be added if necessary. In case the problem can not be fixed, it will be removed.
+
+# Notes for Java participants:
+
+- Scanner and PrintWriter are very slow. If the problem has large input/output, please use BufferedReader and BufferedWriter
