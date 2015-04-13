@@ -7,6 +7,7 @@ For 1 < i < N, the i-th box has 2 neighbours: the (i-1)th box and the (i+1)th bo
 You need to move the stones between boxes, so that the number of stones in each box are equal.
 
 In each move, you can do the following:
+
 - For each box i, you can either do one of the following:
   - Do nothing with this box
   - Take one stone from this box and put that stone in one of its neighbouring box.
@@ -22,8 +23,9 @@ Find the minimum number of moves.
 # Input
 There are multiple test cases in the input file.
 For each test:
+
 - 1st line: N - number of boxes
-- 2nd line: N integers - A(i).
+- Next several lines: N integers - A(i).
 
 There is a blank line between two consecutive test cases.
 
@@ -41,7 +43,8 @@ For each test:
 0 99 3
 
 2
-49 50
+49
+50
 
 3
 3 0 3
