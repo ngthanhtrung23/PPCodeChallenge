@@ -5,6 +5,10 @@
 - The participants are ranked according to the number of problems solved. In case of tie, the time of last correct submission is used to decide winner. There is no penalty for wrong submissions.
 - You can submit at most 70 times for all problems. For example, if you submitted 30 times for 1st problem, then you only have 40 submissions for the other 6 problems.
 
+# Input / Output
+
+- For all problems, please read input from standard input and output from standard output.
+
 # Questions & Clarifications
 
 - If you have any questions regarding the problem statement, please use the Communication tab in our web interface to send question to organizers. We will answer as soon as possible.
