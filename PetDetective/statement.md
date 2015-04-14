@@ -7,6 +7,7 @@ In this problem, you need to find solution to a puzzle game named "Pet detective
 The game is played in a field with M rows and N columns. The rows are numbered with 1 to M, from the top to bottom, and the columns are numbered from 1 to N from left to right. The cell in i-th row and j-th column is denoted as cell (i, j). For example, the pink bird in the above figure is in cell (1, 2).
 
 Your mission is to drive the car (located in cell (3, 3) in the above figure) around the field, pick up the animals and return them to their home. You have the following restrictions:
+
 - You must use the shortest route.
 - You can only move in 4 directions (up, down, left, right), and you can only moves between cells having road between them (in above figure, the roads are highlighted in black)
 - At each moment, your car can only have at most 4 animals.
@@ -17,6 +18,7 @@ Your mission is to drive the car (located in cell (3, 3) in the above figure) ar
 ![Example 1](./IMG_1582.PNG)
 
 In this example, M = 4, N = 1. You start at cell (4, 1) and need to return the dog at cell (1, 1) to his home at (3, 1). The shortest route is:
+
 - Go from (4, 1) to (1, 1) and pick up the dog. Length = 3.
 - Go from (1, 1) to (3, 1), return the dog to his home. Length = 2.
 So the shortest route has length = 5.
@@ -26,12 +28,16 @@ So the shortest route has length = 5.
 ![Example 2](./IMG_1589.PNG)
 
 M = 4, N = 3.
+
 - You start at cell (3, 1), and need to:
+
   - Get dog at (4, 1) to (1, 3)
   - Get cat at (4, 2) to (1, 2)
   - Get hedgehog at (4, 3) to (1, 1)
   - Get turtle at (3, 3) to (2, 1).
+
 The shortest route is:
+
 - Go from (3, 1) to (4, 1), pick up dog --> length = 1
 - Go from (4, 1) to (4, 2), pick up cat --> length = 1
 - Go from (4, 2) to (4, 3), pick up hedgehog --> length = 1

@@ -1,6 +1,6 @@
 # Problem
 
-Given N box on a straight line. The i-th box has A(i) stones.
+Given N boxes on a straight line. The i-th box has A(i) stones.
 
 For 1 < i < N, the i-th box has 2 neighbours: the (i-1)th box and the (i+1)th box. The 1st box only has 1 neighbour (the 2nd box). The Nth box only has 1 neighbour (the (N-1)th box).
 
