@@ -10,11 +10,11 @@ On a `N*N` grid, there was `N*N` cats, each cat sits on a cell of the grid. For 
 ```
 
 
-Cats like to jumps around, so each minute, each cat jumps to one of the neighbouring cell. Each cell has 4 edges. 2 cells are considered neighbours if they share 1 edge. Note that the cells at the corners only have 2 neighbours, cells at the edges have 3 neighbours and the other cells have 4 neighbours.
+Cats like to jumps around, so each minute, each cat jumps to one of the neighbouring cell. 2 cells are considered neighbours if they share 1 edge. Note that each cell has 4 edges, but the cells at the corners only have 2 neighbours, cells at the edges have 3 neighbours and the other cells have 4 neighbours.
 
 After T minutes, what is the expected number of unoccupied cells?
 
-> After T minutes, the board can be in a number of possible states. We're looking for the *Expected Value* across all possible states. Sum up the number the unoccupied cells in each possible state and divide the result by the number of possible state. See Explanation below for more details.
+> After T minutes, the board can be in a number of possible states. We're looking for the [Expected Value](http://en.wikipedia.org/wiki/Expected_value) of the unoccupied cells. Sum up the number the unoccupied cells in each possible state and divide the result by the number of possible state. See Explanation below for more details.
 
 # Constraints:
 - 1 <= N <= 30
@@ -49,7 +49,7 @@ After T minutes, what is the expected number of unoccupied cells?
 
 # Explanation
 - In first test case, after 0 second, all the cats are still in their initial positions. So the expected value is 0.0.
-- In the second test case, after 1 second, each cat can jump to one of the 2 neighbouring cells (note that they can not stay at the same cell). Below are some of the possible state of the grid after 1 minute:
+- In the second test case, after 1 second, each cat can jump to one of the 2 neighbouring cells (note that they must jump). Below are some of the possible state of the grid after 1 minute:
   - Cat in `(1, 1)` jump to `(1, 2)`. Cat in `(1, 2)` --> `(1, 1)`. Cat in `(2, 1)` --> `(2, 2)` and cat in `(2, 2)` --> `(2, 1)`:
 
 ```
