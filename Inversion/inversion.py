@@ -1,12 +1,25 @@
-MN = 250111
+from array import array
+
+n = input()
 MAXV = 50111
 BLOCK = 777
 
-ind = [0 for i in xrange(MN)]
-sl = [[0 for i in xrange(MN)] for j in xrange(411)]
-start = [0 for i in xrange(411)]
-last = [0 for i in xrange(411)]
-block_len = [0 for i in xrange(411)]
+ind = array('l', [])
+for i in xrange(n+5):
+    ind.append(0)
+start = array('l', [])
+last = array('l', [])
+block_len = array('l', [])
+sl = []
+for i in xrange(411):
+    start.append(0)
+    last.append(0)
+    block_len.append(0)
+
+    tmp = array('l', [])
+    for j in xrange(MAXV):
+        tmp.append(0)
+    sl.append(tmp)
 
 
 def update(x, u, k):
@@ -25,8 +38,16 @@ def get(x, u):
     return res
 
 
-n = input()
-a = [0] + map(int, raw_input().split())
+a = array('l', [0] + map(int, raw_input().split()))
+all_values = set(a)
+value_map = {}
+cnt = 0
+for x in all_values:
+    cnt += 1
+    value_map[x] = cnt
+for i in xrange(1, n+1):
+    a[i] = value_map[a[i]]
+
 res = 0
 
 for i in xrange(n, 0, -1):
