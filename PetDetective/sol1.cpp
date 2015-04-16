@@ -1,4 +1,5 @@
-// Author: Do Ngoc Khanh
+// Algorithm: BFS using double ended queue
+
 #include <stdio.h>
 #include <string.h>
 #include <deque>

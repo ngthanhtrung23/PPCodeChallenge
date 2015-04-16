@@ -40,16 +40,25 @@ void solve() {
     // = product( (1 - probability that we go from (u, v) to (i, j)) )
 
     REP(starti,N) REP(startj,N) {
+        // we start at cell (starti, startj)
+        
+        // Initialize our DP array
         memset(f, 0, sizeof f);
         f[0][starti][startj] = 1.0;
+
+
+        // f(turn, i, j) = probability that we end up at cell (i, j) after jumping 'turn' times
         REP(turn,T) {
             REP(i,N) REP(j,N) {
+                // Count how many neighbours
                 int cnt = 0;
                 REP(dir,4) {
                     int ii = i + di[dir], jj = j + dj[dir];
                     if (ii < 0 || ii >= N || jj < 0 || jj >= N) continue;
                     ++cnt;
                 }
+                
+                // For each neighbour, jumps to it and update the DP value
                 REP(dir,4) {
                     int ii = i + di[dir], jj = j + dj[dir];
                     if (ii < 0 || ii >= N || jj < 0 || jj >= N) continue;
@@ -59,6 +68,7 @@ void solve() {
             }
         }
 
+        // Store the result for later
         REP(i,N) REP(j,N)
             a[starti][startj][i][j] = f[T][i][j];
     }
