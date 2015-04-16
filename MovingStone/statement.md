@@ -18,7 +18,7 @@ Find the minimum number of moves.
 
 # Constraints:
 - 1 <= N <= 10,000.
-- 1 <= A_i <= 1,000,000,000.
+- 1 <= A(i) <= 1,000,000,000.
 
 # Input
 There are multiple test cases in the input file.
