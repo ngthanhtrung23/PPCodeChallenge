@@ -1,5 +1,5 @@
 PayPal Codechallenge 2015 - Solutions
-------------------------------
+-------------------------------------
 
 # Overview
 
@@ -9,6 +9,15 @@ In the figure below, you can find the number of participants who attempted at le
 As you can see, there are around 50 contestants who attempted at least one problem. We expected the winner to solve all 7 problems, and around 2-3 contestants to solve 6. But in reality, the winners only solved 5 problems. :(
 
 ![](./img/overview_contestants.png)
+
+Winners:
+- 1st prize: Nathan Azaria (NUS)
+- 2nd prize: Jonathan Irvin Gunawan (NUS)
+- 3rd prize: Nguyen Tan Sy Nguyen (NUS)
+- 4th prize: Bui Do Hiep (NUS)
+- 5th prize: Nguyen Tuan Anh (NTU)
+
+Congratulations to our winners.
 
 ## Problems
 
@@ -87,7 +96,11 @@ The most simple solution is as follows:
 Below is my code in Python:
 
 ```python
-for x in a:    for y in a:        for z in a:            for w in a:               count[x + y + z + w] += 1
+for x in a:
+	for y in a:
+		for z in a:
+			for w in a:
+				count[x + y + z + w] += 1
 
 ```
 
@@ -101,13 +114,17 @@ In order to solve this problem, you must improve the brute force solution using 
 - Second, count how many pair (x, y) sums up to a value. We will use the same technique as the brute force solution:
 
 ```python
-for x in a:    for y in a:        count2[x + y] += 1
+for x in a:
+	for y in a:
+		count2[x + y] += 1
 ```
 
 - Next, to count how many quadruples sums to a certain value, we loop through the sum of pair (x, y) and the sum of pair (z, w), and use the similar technique to update the count of the quadruples:
 
 ```python
-for sum_xy in xrange(1, 2*n+1):    for sum_zw in xrange(1, 2*n+1):        count4[sum_xy + sum_zw] += count2[sum_xy] * count2[sum_zw]
+for sum_xy in xrange(1, 2*n+1):
+	for sum_zw in xrange(1, 2*n+1):
+		count4[sum_xy + sum_zw] += count2[sum_xy] * count2[sum_zw]
 
 ```
 
@@ -192,10 +209,68 @@ Why is this solution correct?
 Following is the main part of my very simple code in Python:
 
 ```python
-l = 0    # stones borrow from rightr = 0    # stones move to rightfor i in xrange(n):    a[i] += r - l    if a[i] > final_amount:        l = 0        r = a[i] - each    else:        l = each - a[i]        r = 0    res = max(res, max(l, r))
+l = 0    # stones borrow from right
+r = 0    # stones move to right
+for i in xrange(n):
+	a[i] += r - l
+	if a[i] > final_amount:
+		l = 0
+		r = a[i] - each
+	else:
+		l = each - a[i]
+		r = 0
+	res = max(res, max(l, r))
 ```
 
 ## Complexity
 
 The complexity of this algorithm is `O(N)`, where N is the number of boxes.
+
+# Pet Detective
+
+## Overview
+
+This problem is based on an actual game, [Pet Detective - Lumosity](https://www.youtube.com/watch?v=fUwKBR_Ip5E).
+
+The solution for this problem is to use shortest path on graph.
+
+## Graph Construction
+
+First, we need to construct the graph as following:
+
+- Each node in the graph will represent a state of the game, and thus it will need to  encode the following information:
+	- The current position of the car.
+	- Which pets are currently on the car.
+	- Which pets are currently returned to their home.
+- We have an edge between 2 nodes, if we can move between the corresponding state of the game. We have 3 types of moves between the states of the game, and thus 3 types of edges:
+	- Move the car to a new position
+	- Pick up a pet to our car
+	- Return a pet in our car to his home.
+
+Note that, in order to use the 2nd and 3rd moves, we must be at the place containing the pet or at his home.
+
+How to store this graph? In my code, I represent each node of the graph with 3 integers, representing:
+
+- The row of the the current position of the car
+- The column of hte current position of the car
+- A base-3 number, which encode the states of the pets: Each digit represents a pet:
+	- The corresponding digit is 0 if the pet is not picked up by the car
+	- The corresponding digit is 1 if the pet is currently in the car
+	- The corresponding digit is 2 if the pet is already returned to his home.
+
+## Path Finding
+
+So now the problem becomes finding shortest path in a graph, which can be solved in multiple ways:
+
+- [Dijkstra algorithm](http://en.wikipedia.org/wiki/dijkstra's_algorithm).
+	- This solution has complexity `O(M*log(N))` where M is the number of edges, and N is the number of states. This is a bit too slow to solve the problem, and you need to make some optimizations in order to pass all test cases. Some possible optimizations are:
+		- Only consider the positions with pets / homes
+		- Use A*: implement a heuristic to estimate how many moves we still need to return the remaining pets to his home.
+	- During the contest, there was one participant who solved this problem using this approach.
+- [BFS](http://en.wikipedia.org/wiki/Breadth-first_search):
+	- In this graph, we only have 2 types of edges:
+		- If you pick up pet or return him to his home: weight = 0
+		- If you move the car: weight = 1
+	- Thus, you can solve this problem using a modified version of BFS, using a double ended queue. You can read discussion about this algorithm [here](http://codeforces.com/blog/entry/6455)
+	- There were 2 contestants who solved this problem using this approach
 
