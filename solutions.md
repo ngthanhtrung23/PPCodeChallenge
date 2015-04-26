@@ -1,9 +1,9 @@
 PayPal Codechallenge 2015 - Solutions
 -------------------------------------
 
-# Overview
+# 1. Overview
 
-## Contestants
+## 1.1. Contestants
 
 In the figure below, you can find the number of participants who attempted at least one problem, who solved 1 problem, 2 problems, ... The blue line represents our expectation, and the red line represents the actual numbers.
 As you can see, there are around 50 contestants who attempted at least one problem. We expected the winner to solve all 7 problems, and around 2-3 contestants to solve 6. But in reality, the winners only solved 5 problems. :(
@@ -19,19 +19,19 @@ Winners:
 
 Congratulations to our winners.
 
-## Problems
+## 1.2. Problems
 
 Below you can see number of participants who correctly solved each problem. Each problem was solved by at least one participant, meaning all of them are solvable during contest time! We expected problem "Moving Stone" to be relatively easy, and would be solved by around 10 contestants, but in reality, only 1 contestant successfully solved it.
 
 ![](./img/overview_problems.png)
 
-## Where to find our solutions?
+## 1.3. Where to find our solutions?
 
 You can find the complete code for all problems, as well as the input & output files for each problem in [My Github repo](https://github.com/ngthanhtrung23/PPCodeChallenge).
 
-# Black & White
+# 2. Black & White
 
-## Solution
+## 2.1. Solution
 This is the easiest problem in the problemset.
 
 First of all, notice that except for the `2*2` squares having 2 corners lying at the line `y=x`, all the `2*2` squares have 2 black cells and 2 white cells.
@@ -46,19 +46,19 @@ for i in xrange(x1, x2-1):
 
 ```
 
-## Complexity
+## 2.2. Complexity
 
 The complexity of the explained solution is `O(X^2)` where X is the maximum coordinates, which in our case is 1000.
 
 There is also a solution with complexity `O(1)`. Can you try to find it? :)
 
-## Trap
+## 2.3. Trap
 
 Even though this is the easiest problem, you must still be careful of traps. In this problem, the trap is the case: `X1 > X2` or `Y1 > Y2`.
 
-# HQ9+
+# 3. HQ9+
 
-## Solution
+## 3.1. Solution
 
 This is the 2nd easiest problem in the problemset. You just need to implement what asked in the problem statement:
 
@@ -68,22 +68,22 @@ This is the 2nd easiest problem in the problemset. You just need to implement wh
 This is a [real programming language](http://esolangs.org/wiki/HQ9+), though it is a joke language and is not practical in any way. Also, the `+` operator doesn't do anything.
 
 
-## Complexity
+## 3.2. Complexity
 
 The complexity of this solution is `O(L)`, where L is the length of the program.
 
-## Traps
+## 3.3. Traps
 
 In this problem, there are a couple of traps:
 
 - The program can contain whitespace in the middle, so if you use C++ and use `cin` or `scanf`, you may probably read input wrong.
 - You must be careful when to put `s` in the end of `bottle`. When the number of bottle is 1, you must not print `s`.
 
-# Four
+# 4. Four
 
-## Solution
+## 4.1. Solution
 
-### Brute Foce solution
+### 4.1.1. Brute Foce solution
 
 First, I will explain a brute force solution. This will be helpful, because the idea will still be used in the later solution.
 
@@ -106,7 +106,7 @@ for x in a:
 
 This solution has complexity `O(N^4)` where N is the number of elements of array A. This solution is too slow and cannot run in the given time limit.
 
-### Divide and Conquer solution
+### 4.1.2. Divide and Conquer solution
 
 In order to solve this problem, you must improve the brute force solution using Divide & Conquer technique, which is a very useful technique in computer science.
 
@@ -128,13 +128,13 @@ for sum_xy in xrange(1, 2*n+1):
 
 ```
 
-### Complexity
+### 4.1.3. Complexity
 
 The complexity of this solution is `O(N^2)`, which should be fast enough to pass all test cases.
 
-# Moving Stone
+# 5. Moving Stone
 
-## Solution
+## 5.1. Solution
 
 This problem can be solved with a very simple greedy algorithm.
 
@@ -222,19 +222,19 @@ for i in xrange(n):
 	res = max(res, max(l, r))
 ```
 
-## Complexity
+## 5.2. Complexity
 
 The complexity of this algorithm is `O(N)`, where N is the number of boxes.
 
-# Pet Detective
+# 6. Pet Detective
 
-## Overview
+## 6.1. Overview
 
 This problem is based on an actual game, [Pet Detective - Lumosity](https://www.youtube.com/watch?v=fUwKBR_Ip5E).
 
 The solution for this problem is to use shortest path on graph.
 
-## Graph Construction
+## 6.2. Graph Construction
 
 First, we need to construct the graph as following:
 
@@ -258,7 +258,7 @@ How to store this graph? In my code, I represent each node of the graph with 3 i
 	- The corresponding digit is 1 if the pet is currently in the car
 	- The corresponding digit is 2 if the pet is already returned to his home.
 
-## Path Finding
+## 6.3. Path Finding
 
 So now the problem becomes finding shortest path in a graph, which can be solved in multiple ways:
 
@@ -273,4 +273,83 @@ So now the problem becomes finding shortest path in a graph, which can be solved
 		- If you move the car: weight = 1
 	- Thus, you can solve this problem using a modified version of BFS, using a double ended queue. You can read discussion about this algorithm [here](http://codeforces.com/blog/entry/6455)
 	- There were 2 contestants who solved this problem using this approach
+
+# 7. Jumping Around
+
+## 7.1. Solution
+
+In order to solve this problem, you must have:
+
+- Some knowledge in probabilities
+- Some knowledge in dynamic programming
+
+The first observation of this problem is that:
+
+- The expected number of the amount of empty cells is equal to the sum of the probability that cell (i, j) is empty for each cell (i, j).
+
+This is a direct application of [linearity of expectation](http://www.cse.iitd.ac.in/~mohanty/col106/Resources/linearity_expectation.pdf)
+
+Thus, we need to calculate the probability that a cell (i, j) is empty. We can see that the following are all equal:
+
+- Probability that cell (i, j) is empty
+- Product of (probability that the cat who is initially at cell (u, v) does not jump to cell (i, j)), for all cell (u, v).
+- Product of (1 - probability that the cat who is initially at cell (u, v) jumps to cell (i, j)), for all cell (u, v)
+
+Thus, we need to calculate: probability that the cat who is initially at cell (u, v) finally jumps to cell (i, j). And we need to calculate this probability for all values of u, v, i, j.
+
+This can be done using dynamic programming:
+
+- Consider only one cat at a time.
+- Let's say we consider the cat who starts at cell (u, v).
+- We can use dynamic programming to calculate F(t, i, j) which is the probability that the cat jumps to cell (i, j) after t turns.
+
+```
+F(t, i, j) = sum( F(t-1, i', j') * 1 / (number of neighbours of (i', j') )
+
+where (i', j') is neighbour of (i, j).
+```
+
+## 7.2. Complexity
+
+This solution has complexity `O(N^4*T)`, which is fast enough to pass all of our test cases.
+
+But if you feel that it is too slow, you can also precompute the results for all values of N and T, and submit a code with all the hard-coded results. Since there are only 1500 different values for (N, T), the size of the code is still quite small.
+
+# 8. Inversion
+
+## 8.1. 2D data structures
+
+This is the hardest solution in the problem set. To solve it, first, you can see that the main problem is following:
+
+- At some index u, count how many v satisfies:
+	- v < u
+	- A(v) > A(u).
+- For some index u, update the value of A(u).
+
+This is a straight-forward application of some 2D data structures, for example 2D Fenwick tree. You can read about Fenwick tree [here](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/) or [here](http://en.wikipedia.org/wiki/Fenwick_tree).
+
+Basically, your data structure must be able to:
+
+- Maintain a set of points. In this case, you need to maintain N points with co-ordinates: (u, A(u))
+- Remove a point
+- Add a point
+- Count how many points exist in a region.
+
+The complexity of this solution is `O(Q*log(N)*log(N))`.
+
+In the contest, all the participants who solved this problem used this approach.
+
+## 8.2. Alternative solution using Divide & Conquer
+
+2D data structures can be hard to implement. In my solution, I used a different approach.
+
+- First, divide the array into blocks of size `sqrt(N)`.
+- For each block, use a 1D Fenwick tree to store the points.
+
+The idea is still the same, I also need to maintain the set of point, remove a point, add a point and count how many points exist in a region.
+
+- To add/remove a point, update the 1D Fenwick tree of the corresponding block
+- To count how many points exist in a region, loop through all blocks (there are only `O(sqrt(N))` of them). In each block, use 1D Fenwick tree to count the number of points.
+
+The complexity of this solution is `O(Q*sqrt(N)*log(N))`, which is still fast enough to pass all the test cases.
 
