@@ -1,5 +1,7 @@
 # PPCodeChallenge
-PayPal Code challenge
+PayPal Code challenge was organized the first time in 2015, with over 100 people registered.
+
+Contest information can be found [here](http://codechallenge.rocks/).
 
 ## List of problems used by ascending order of difficulty:
 1. HQ9+ (implementation skill)
